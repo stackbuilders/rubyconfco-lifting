@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\lstloadlanguages{Ruby}
+\lstset{%
+  basicstyle=\ttfamily\color{black},
+  commentstyle = \ttfamily\color{red},
+  keywordstyle=\ttfamily\color{blue},
+stringstyle=\color{orange}}
+
+\begin{document}
+\title{La primera abstracción funcional: lifting}
+\author{Juan Pablo Santos}
+\date{17 de octubre de 2015}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Agenda}
+  \tableofcontents
+\end{frame}
+
+\begin{frame}
+  \frametitle{Funciones puras}
+  \begin{itemize}
+    \item Mismos argumentos, mismo resultado.
+    \item Evaluación sin efectos secundarios implicitos.
+    \item No mantiene estado implicito entre invocaciones.
+    \item No es muy útil.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{El método Array\#map}
+  \begin{itemize}
+    \item ¿Qué hace?
+    \item Nueva colección
+    \item Efectos secundarios
+    \item Transformación de colecciones
+    \item Bloques
+    \item vs \#each
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{El método \#map}
+  \begin{itemize}
+    \item Expectativas
+    \begin{itemize}
+        \item Identidad
+        \item Composición
+    \end{itemize}
+  \end{itemize}
+
+  \begin{lstlisting}[language=Ruby, caption=Identidad de \#map]
+    [1,2,3].map { |n| n } == [1,2,3]
+  \end{lstlisting}
+
+  \begin{lstlisting}[language=Ruby, caption=Composición de \#map]
+    [1,2,3].map { |n| n*n }.map { |m| m + 1 }
+    ==
+    [1,2,3].map { |n| (n*n) + 1 }
+  \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Adaptadores}
+  \begin{itemize}
+    \item Funciones sobre listas de valores.
+    \item Funciones sobre valores.
+    \item \#map como un adaptador. Funciones sobre valores a funciones
+      sobre listas.
+    \item ¿Listas vacias?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{¿Otros adaptadores?}
+  \begin{itemize}
+    \item \#map once again!
+    \item Funciones sobre valores que pueden ser nil.
+    \item Funciones sobre valores.
+    \item Possibly \ldots
+  \end{itemize}
+\end{frame}
+
+\end{document}
