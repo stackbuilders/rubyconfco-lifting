@@ -23,6 +23,7 @@ stringstyle=\color{orange}}
   \tableofcontents
 \end{frame}
 
+\section{Funciones puras}
 \begin{frame}
   \frametitle{Funciones puras}
   \begin{itemize}
@@ -33,6 +34,7 @@ stringstyle=\color{orange}}
   \end{itemize}
 \end{frame}
 
+\section{El método Array\#map}
 \begin{frame}
   \frametitle{El método Array\#map}
   \begin{itemize}
@@ -46,6 +48,7 @@ stringstyle=\color{orange}}
 
 \end{frame}
 
+\section{El método \#map}
 \begin{frame}[fragile]
   \frametitle{El método \#map}
   \begin{itemize}
@@ -68,6 +71,7 @@ stringstyle=\color{orange}}
 
 \end{frame}
 
+\section{Adaptadores}
 \begin{frame}[fragile]
   \frametitle{Adaptadores}
   \begin{itemize}
@@ -79,14 +83,47 @@ stringstyle=\color{orange}}
   \end{itemize}
 \end{frame}
 
+\section{¿Otros adaptadores?}
 \begin{frame}[fragile]
   \frametitle{¿Otros adaptadores?}
   \begin{itemize}
-    \item \#map once again!
+    \item \begin{verbatim}Enumerable#map\end{verbatim} once again!
     \item Funciones sobre valores que pueden ser nil.
+    \item Funciones sobre listas vacias.
     \item Funciones sobre valores.
-    \item Possibly \ldots
+    \item Funciones sobre listas con un solo valor.
   \end{itemize}
+\end{frame}
+
+\section{Valores opcionales}
+\begin{frame}[fragile]
+  \frametitle{Valores opcionales}
+
+  \begin{lstlisting}[language=Ruby]
+    square = lambda { |n| n*n }
+  \end{lstlisting}
+  \begin{lstlisting}[language=Ruby]
+    square(nil)
+  \end{lstlisting}
+
+  \begin{verbatim}
+  undefined method `*' for nil:NilClass
+  \end{verbatim}
+
+  Funciones sobre listas vacias.
+  \begin{lstlisting}[language=Ruby]
+    [].map &square == []
+  \end{lstlisting}
+  Funciones sobre listas con un solo valor.
+  \begin{lstlisting}
+    [5].map &square == [25]
+  \end{lstlisting}
+  Possibly \ldots
+\end{frame}
+
+\section{Possibly?}
+\begin{frame}[fragile]
+  \frametitle{Possibly?}
 \end{frame}
 
 \end{document}
