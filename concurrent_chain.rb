@@ -19,6 +19,8 @@ fulfilled_value =
   .map(&minus_five)
   .map(&plus_ten)
   .execute
-  .value == 11
+
+sleep(0.1)
+fulfilled_value == 11
 
 # 2.1.3 :001 > true
