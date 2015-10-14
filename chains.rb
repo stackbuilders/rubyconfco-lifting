@@ -7,5 +7,4 @@ Some(5)
   .map(&minus_five)
   .map(&plus_ten) == Some(11)
 
-2.1.3 :001 > true
-
+# 2.1.3 :001 > true

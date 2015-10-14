@@ -7,4 +7,4 @@ plus_ten = ->(n) { n + 10 }
   .map(&minus_five)
   .map(&plus_ten) == [7, 8, 9]
 
-2.1.3 :001 > true
+# 2.1.3 :001 > true
