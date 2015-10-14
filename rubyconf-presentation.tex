@@ -2,9 +2,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{listings}
+\usepackage{multicol}
+\usepackage{graphicx}
 \lstloadlanguages{Ruby}
 \lstset{%
-  basicstyle=\ttfamily\color{black},
+  basicstyle=\ttfamily\small\color{black},
   commentstyle = \ttfamily\color{red},
   keywordstyle=\ttfamily\color{blue},
 stringstyle=\color{orange}}
@@ -95,6 +97,24 @@ stringstyle=\color{orange}}
   \end{itemize}
 \end{frame}
 
+\section{The billion dollar mistake}
+\begin{frame}
+  \frametitle{The billion dollar mistake}
+  \begin{multicols}{2}
+    \begin{quote}
+      I call it my billion-dollar mistake. It was the invention of the
+      null reference in 1965.
+    \end{quote}
+
+    \columnbreak
+
+    \begin{figure}
+      \includegraphics[scale=0.2]{hoare.jpg}
+      \caption{Tony Hoare}
+    \end{figure}
+  \end{multicols}
+\end{frame}
+
 \section{Valores opcionales}
 \begin{frame}[fragile]
   \frametitle{Valores opcionales}
@@ -118,12 +138,31 @@ stringstyle=\color{orange}}
   \begin{lstlisting}
     [5].map &square == [25]
   \end{lstlisting}
-  Possibly \ldots
+  ¿Possibly? \ldots
 \end{frame}
 
-\section{Possibly?}
+\section{ActiveRecord::QueryMethods\#where}
 \begin{frame}[fragile]
-  \frametitle{Possibly?}
+  \frametitle{ActiveRecord::QueryMethods\#where}
+  \lstinputlisting[language=Ruby]{repl_load.pry}
+\end{frame}
+
+\section{Possibly!}
+\begin{frame}[fragile]
+  \frametitle{Possibly!}
+  \lstinputlisting[language=Ruby, firstline=1, lastline=18]{possibly_enumerable.rb}
+\end{frame}
+
+\section{Possibly: Some}
+\begin{frame}[fragile]
+  \frametitle{Possibly: Some}
+  \lstinputlisting[language=Ruby, firstline=20, lastline=32]{possibly_enumerable.rb}
+\end{frame}
+
+\section{Possibly: None}
+\begin{frame}[fragile]
+  \frametitle{Possibly: None}
+  \lstinputlisting[language=Ruby, firstline=34, lastline=42]{possibly_enumerable.rb}
 \end{frame}
 
 \end{document}
