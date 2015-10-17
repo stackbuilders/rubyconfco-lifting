@@ -4,12 +4,19 @@
 \usepackage{listings}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{textpos}
+
 \lstloadlanguages{Ruby}
 \lstset{%
   basicstyle=\ttfamily\small\color{black},
   commentstyle = \ttfamily\color{red},
   keywordstyle=\ttfamily\color{blue},
 stringstyle=\color{orange}}
+
+\addtobeamertemplate{frametitle}{}{%
+  \begin{textblock*}{100mm}(.85\textwidth,6cm)
+    \includegraphics[height=2cm,width=2cm]{sb.png}
+\end{textblock*}}
 
 \begin{document}
 \title{La primera abstracción funcional: lifting}
@@ -151,6 +158,24 @@ stringstyle=\color{orange}}
   \lstinputlisting[language=Ruby]{repl_load.pry}
 \end{frame}
 
+\section{¿Qué queremos?}
+\begin{frame}
+  \frametitle{¿Qué queremos?}
+  \begin{itemize}
+    \item Representación semántica de fallas
+    \pause
+    \item ¡No nil!
+    \pause
+    \item Evitar undefined method `whatevs' for nil:NilClass
+    \pause
+    \item Evitar condicionales
+    \pause
+    \item Enumerable\#map
+    \pause
+    \item Enumerable!
+  \end{itemize}
+\end{frame}
+
 \section{Possibly!}
 \begin{frame}[fragile]
   \frametitle{Possibly!}
@@ -181,6 +206,15 @@ stringstyle=\color{orange}}
 \begin{frame}[fragile]
   \frametitle{Cadenas}
   \lstinputlisting[language=Ruby, firstline=12, lastline=26]{concurrent_chain.rb}
+\end{frame}
+
+\section{Conclusión}
+\begin{frame}
+  \includegraphics[scale=0.7]{lifting-diagram.png}
+\end{frame}
+
+\begin{frame}
+  Funtores! One step below mythical monads
 \end{frame}
 
 \end{document}
